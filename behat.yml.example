@@ -1,0 +1,17 @@
+default:
+    suites:
+        features:
+            paths: [ '%paths.base%/features/' ]
+            contexts:
+                - FeatureContext
+    extensions:
+        Behat\MinkExtension:
+            base_url: "http://magento.url" # Url to Magento site
+            default_session: ~
+            sessions:
+                first_session:
+                    goutte: ~
+                second_session:
+                    selenium2: ~
+            browser_name: chrome
+            selenium2: ~
