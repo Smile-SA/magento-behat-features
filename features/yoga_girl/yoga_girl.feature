@@ -49,11 +49,11 @@ Feature: A the yoga girl
     When I select "Paris" from "region_id"
     When I fill in "postcode" with "92600"
     When I fill in "telephone" with "+33655579113"
-    And wait 1 seconds
-    When I chose any shopping method
+    And wait 5 seconds
+    When I chose any shipping method
     And wait 3 seconds
     When I press "Next"
-    And wait 3 seconds
+    And wait 5 seconds
     When I press "Place Order"
     And wait 10 seconds
     Then I should see "Thank you for your purchase!"

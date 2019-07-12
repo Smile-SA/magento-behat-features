@@ -78,16 +78,16 @@ class FeatureContext extends BaseContext
     }
 
     /**
-     * @When I chose any shopping method
+     * @When I chose any shipping method
      */
-    public function iChoseAnyShoppingMethod(): void
+    public function iChoseAnyShippingMethod(): void
     {
-        $shoppingMethodsList = $this->getSession()->getPage()->findAll('css', 'input[type="radio"]');
-        $index = random_int(1, count($shoppingMethodsList));
+        $shippingMethodsList = $this->getSession()->getPage()->findAll('css', 'input[type="radio"]');
+        $index = random_int(1, count($shippingMethodsList));
         $iterator = 1;
-        foreach ($shoppingMethodsList AS $shoppingMethod) {
+        foreach ($shippingMethodsList AS $shippingMethod) {
             if ($iterator === $index) {
-                $shoppingMethod->click();
+                $shippingMethod->click();
                 continue;
             }
             $iterator++;
@@ -171,6 +171,7 @@ JS;
         try {
             $this->getSession()->executeScript($function);
         } catch (Exception $e) {
+            print_r($e->getMessage());
             throw new \RuntimeException('Scroll Into View failed');
         }
     }
