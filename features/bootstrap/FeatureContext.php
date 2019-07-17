@@ -160,13 +160,16 @@ class FeatureContext extends BaseContext
     public function scrollHtmlElementIntoView($cssSelector): void
     {
         $function = <<<JS
-    (
-        jQuery(document).ready(function($) {
-
-            let elem = $('$cssSelector');
-      $('html, body').animate({scrollTop:elem.offset().top})
-    }
-    ));
+        (
+            jQuery(document).ready(function($) {
+                let elem = $('$cssSelector');
+                $('html, body').animate(
+                    {
+                        scrollTop:elem.offset() || { "top": NaN }.top
+                    }
+                );
+            }
+        ));
 JS;
         try {
             $this->getSession()->executeScript($function);
