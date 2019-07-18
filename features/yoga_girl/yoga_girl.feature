@@ -11,7 +11,7 @@ Feature: A the yoga girl
     When I check "Cotton" checkbox
     And wait 2 seconds
     When I click any product
-    And wait 2 seconds
+    And wait 5 seconds
     When I chose any size
     And wait 2 seconds
     When I chose any color
@@ -57,3 +57,4 @@ Feature: A the yoga girl
     When I press "Place Order"
     And wait 10 seconds
     Then I should see "Thank you for your purchase!"
+    And I reset session

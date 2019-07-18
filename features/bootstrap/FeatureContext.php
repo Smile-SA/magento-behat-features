@@ -58,9 +58,12 @@ class FeatureContext extends BaseContext
      */
     public function iChoseAnySize(): void
     {
-        $sizesList = $this->getSession()->getPage()->findAll('css', '.swatch-option');
-        $selector = '.swatch-option:nth-child('.random_int(1, count($sizesList)).')';
-        $size = $this->getSession()->getPage()->find('css', $selector);
+        $sizesList = $this->getSession()->getPage()->findAll('css', '.swatch-option.text');
+        $selector = '.swatch-option.text:nth-child('.rand(1, count($sizesList)).')';
+
+        do {
+            $size = $this->getSession()->getPage()->find('css', $selector);
+        } while ($size === null);
 
         $size->click();
     }
@@ -70,9 +73,12 @@ class FeatureContext extends BaseContext
      */
     public function iChoseAnyColor(): void
     {
-        $colorsList = $this->getSession()->getPage()->findAll('css', '.swatch-select>option');
-        $selector = '.swatch-select>option:nth-child('.random_int(2, count($colorsList)).')';
-        $color = $this->getSession()->getPage()->find('css', $selector);
+        $colorsList = $this->getSession()->getPage()->findAll('css', '.swatch-option.color');
+        $selector = '.swatch-option.color:nth-child('.rand(2, count($colorsList)).')';
+
+        do {
+            $color = $this->getSession()->getPage()->find('css', $selector);
+        } while ($color === null);
 
         $color->click();
     }
@@ -83,7 +89,7 @@ class FeatureContext extends BaseContext
     public function iChoseAnyShippingMethod(): void
     {
         $shippingMethodsList = $this->getSession()->getPage()->findAll('css', 'input[type="radio"]');
-        $index = random_int(1, count($shippingMethodsList));
+        $index = rand(1, count($shippingMethodsList));
         $iterator = 1;
         foreach ($shippingMethodsList AS $shippingMethod) {
             if ($iterator === $index) {
@@ -122,11 +128,12 @@ class FeatureContext extends BaseContext
     public function iClickAnyProduct(): void
     {
         $productsList = $this->getSession()->getPage()->findAll('css', '.product-item');
-        $selector = '.product-item:nth-child('.random_int(1, count($productsList)).')';
+        $selector = '.product-item:nth-child('.rand(1, count($productsList)).') a.product';
+
         $this->iScrollElementIntoView($selector);
         $this->getSession()->wait(2000);
         $product = $this->getSession()->getPage()->find('css', $selector);
-        $product->doubleClick();
+        $product->click();
     }
 
     /**

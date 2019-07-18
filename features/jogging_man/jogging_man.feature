@@ -11,7 +11,7 @@ Feature: A the jogging man
     When I check "Polyester" checkbox
     And wait 1 seconds
     When I click any product
-    And wait 2 seconds
+    And wait 5 seconds
     When I chose any size
     And wait 2 seconds
     When I chose any color
@@ -57,3 +57,4 @@ Feature: A the jogging man
     And wait 10 seconds
     Then I should see "Thank you for your purchase!"
     And wait 3 seconds
+    And I reset session
