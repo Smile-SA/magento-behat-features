@@ -1,12 +1,12 @@
 {
-    "name": "androshchuk/tool-for-generation-data-for-tracker-module",
+    "name": "smile/magento2-elasticsuite-behat-features",
     "description": "Tool for generation data for tracker module in Elasticsuite.",
     "keywords": ["behat", "elasticsuite"],
     "license": "MIT",
     "authors": [
         {
             "name": "Dmytro Androshchuk",
-            "email": "androshchuk.d@gmail.com",
+            "email": "dmand@smile.fr",
             "role": "Developer"
         }
     ],

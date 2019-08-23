@@ -3,7 +3,7 @@
 use Behat\MinkExtension\Context\MinkContext;
 
 /**
- * @author Dmytro ANDROSHCHUK <androshchuk.d@gmail.com>
+ * @author Dmytro ANDROSHCHUK <dmand@smile.fr>
  */
 class BaseContext extends MinkContext
 {

@@ -7,7 +7,7 @@ use Behat\Mink\Exception\UnsupportedDriverActionException;
 /**
  * Defines application features from the specific context.
  *
- * @author Dmytro ANDROSHCHUK <androshchuk.d@gmail.com>
+ * @author Dmytro ANDROSHCHUK <dmand@smile.fr>
  * @SuppressWarnings(PHPMD.TooManyPublicMethods)
  */
 class FeatureContext extends BaseContext
