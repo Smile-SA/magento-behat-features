@@ -4,7 +4,7 @@ Based on Behat and Selenium. For more information read http://mink.behat.org/en/
 
 **Installation:**
 1. composer install
-2. Paste you site url in file .behat.yml
+2. Paste you site url in file behat.yml
 3. Download chromedriver for you Google Chrome http://chromedriver.chromium.org/downloads and put it at the root of the tool. You can run it with command 'sudo ./chromedriver --port=9516'
 4. java -jar selenium-server-standalone-3.0.1.jar -port 4444
 
